@@ -44,10 +44,10 @@ d1-d2 #the output is datetime.timedelta(5); it shows the day adn
 
 dt1=datetime(2014, 12, 11, 10, 22)
 dt2=datetime(2014, 12, 11, 9, 22)
-dt1-dt2 #the output is datetime.timedelta(0, 3600)
+dt1-dt2 #the output is datetime.timedelta(0, 3600)-- the defult shows Only days, seconds that are stored internally.
 
 
-# Add a timedelta
+# Add a timedelta 
 delta=timedelta(hours=72, minutes=0, seconds=0)
 dt=datetime(2014, 10, 10, 12, 25)
 print(dt+delta)
