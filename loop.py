@@ -96,6 +96,82 @@ y=sorted(data, reverse=True)
 data
 y
 
+# -*- coding: utf-8 -*-
+""" loops and conditional"""
+balance=550
+if balance<500:
+    print("not enough")
+elif balance<700:
+    print("enough")
+else:
+    print("way enough")
+
+for c in ['green', 'red', 'blue']:
+    print ('I love '+c)
+    
+x=1
+while (x<100):
+    x=x*2
+    print(x)
+else:
+    print(x)
+
+#------
+
+for number in range(10):
+    number = number+2
+    
+    if number ==5:
+        break
+    print ('number is ' + str(number) )
+    
+print ('out of loop')
+
+#we never get to the break
+number =0
+for x in range(10):
+    number = number + 2
+    if number==5:
+        break
+    print ('number is ' + str(number) )
+
+
+
+number =0
+for x in range(10):
+    number = x * 2
+    if number==5:
+        break
+    print ('number is ' + str(number) )
+
+print ('Out of Loop')
+#---------
+
+
+
+#we never get to the break
+number =0
+for number in range(10):
+    number = number + 2
+    if number==5: # using continue we will exclude 5 using this method.. don't run this statment for this cycle only
+        continue
+    print ('number is ' + str(number) )
+
+print ('Out of Loop')
+
+number =0
+for number in range(10):
+    number = number + 1
+    if number==5: # it is the default.. it doesn't do anything.. used in some function that they are required to have conditional statment 
+        pass 
+    print ('number is ' + str(number) )
+
+print ('Out of Loop')
+
+#-----------------------------
+
+
+    
 
 
 
