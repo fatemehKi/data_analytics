@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
 """
+Created on Fri Mar 22 15:14:45 2019
+
+@author: Kian
+"""
+
+# -*- coding: utf-8 -*-
+"""
 Spyder Editor
 Author: Fatemeh
 This is a temporary script file.
@@ -9,21 +16,21 @@ x
 print(x)
 
 '''
--python is case sensitive but not sensitive to the space
--to get the integer value we put double/ (meaning //)
--naming vars: can not start with the number but number can be other places in the name
--packages are the series of the functions, data sets, objects.. that we can import and call them 
--the histograms are used for the frequecy among the unique value in the same column
--scatters are used for the correlation of two variabels
+- python is case sensitive but not sensitive to the space
+- to get the integer value we put double/ (meaning //)
+- naming vars: can not start with the number but number can be other places in the name
+- packages are the series of the functions, data sets, objects.. that we can import and call them 
+- the histograms are used for the frequecy among the unique value in the same column
+- scatters are used for the correlation of two variabels
 - in the sequence type(tuple,list) the order is important but not in non-sequence type(dictionary, set)
 - type(name_of_theobject) is used to identify the type of variable(object)
 - applying the type function to the set (collection type) we get different
-- none us like a value in python but can not be used with operation.. none can be used for the missing value handling
+- none used like a value in python but can not be used with operation.. none can be used for the missing value handling
 - collection type: to create tuple we use () for the list we use [] and we use {} for dictionary and we use the following 
-script a_set =set(a_tuple) 
+script a_set =set(a_tuple) for the set
 - tuple is immutable order sequence, can not be updated, but list is mutable ordered sequence
-- str function returns anu numeric to the string
-- in python we are indexing from '0' (unlike R which is from1); therefor, the character are stored from 0 to len(s)-1
+- str function turns a numeric to the string
+- in python we are indexing from '0' (unlike R which is from '1'); therefor, the character are stored from 0 to len(s)-1
 - s.find('word' 0, 50): finding the location of the specific word in the string.. starting from 0 and we need to enter the start and end index as well
 - s.capitalize(): capitalizing the first character in the string
 - s.count('chr'): giving the number of character in the string s
@@ -76,6 +83,7 @@ x
 
 y=2
 y**=3
+y
 
 a =True #case sensitive
 b =False
@@ -117,7 +125,8 @@ s[1]
 s[3]
 s[4] #error because we don't have location 4
 
-x='this is a right way, right' 
+x='this is a right way, right'
+x.find('right', 0, 50) 
 x.find('right', 11, 50)
 x.capitalize()
 x.count('right')
@@ -134,9 +143,10 @@ q='|'.join(x) #seperating each char with the pipe (|)
 z='tarek' + ' kkk'
 z
 z[0:4]#it does exclude tnumber 4 (n-1)
-z[0:-3]# we will exclude this slice (in positive number) sso we count from right 0, 1,2 and then we will have the rest of the string
+z[0:-3]# we will exclude this slice (in positive number) sso we count from right 0, 1,2 and remove those and then we will have the rest of the string
 
 A="This is called 'Milk'" # to use quotation inside quotation
+A
 
 a='AAA'
 b='BBBBB'
