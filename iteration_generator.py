@@ -13,6 +13,8 @@ list(t) the result is ['Othello', 'Iago'].. we either have a scalar or we have t
 - generators are a simple and powerful tool for creating iterator.., generator is the way of using iterators
 - to call the generator we either use the loop or we use the next()
 - with is a secure way of reading and opening and closing at the end
+- readline() return a list and each line is one element
+- enumerate on the file will iterate among lines
 '''
 
 s='abc'
@@ -103,5 +105,85 @@ def file_read_from_head(fname, nlines):
 
 file_read_from_head('text.txt',2)
 
+#-------------a python file with append.. it doesn't overwrite, it will add at the end
+import os
+os.getcwd()
+os.chdir(r'C:\Users\mfatemeh\Desktop\python')
+def file_read(fname):
+   # with open (fname, 'a') as myfile:
+    myfile= open(fname, 'a')
+    myfile.write('Python Excersices\n')
+    myfile.write('Java Excercises\n')
+    #txt=open(fname)
+    #print(txt.read())
+    print(myfile.read())
+    myfile.close()
+    
 
+file_read('abc.txt')
 
+#---------- readline() returns a list and delimiter is \n 
+#to read the number of lines and each in the list element
+def file_read(fname):
+    with open(fname) as f:
+        #content_list is the list that contains the read lines
+        content_list =f.readlines() #readline will read only first line but readlines it will read all the lines and put it in seperated list
+        print(content_list)
+        print(type(content_list))
+        return(len(content_list))
+    
+file_read('text.txt')
+    
+#------------ a python program to find the longest words in the text
+def longest_word(filename):
+    with open(filename, 'r') as infile:
+        words=infile.read().split() #first we split the text
+    max_len = len(max(words, key=len)) # if we put len without key=, we will get the last alphabetic (w in our case) word but with the len it will give the longest
+    return [word for word in words if len(word)==max_len] # list comprehensive to find if we have multiple words with the same length 
+
+print(longest_word('text.txt'))
+
+#---------  a pythin to count the number of lines in a text file not using the readlines()
+def file_lengthy(fname):
+    with open(fname) as f:
+        for i , l in enumerate(f): #it will associate a variable-object (like l) to the iterable object like f l is associated to the line and i is the counter
+            pass # l is the object for the line.. the first one is the counter
+    return i+1
+print ("number of lines in the file: ", file_lengthy(test.txt))
+
+#-------------- count the frequency of words in a file
+#counter gives us the number of frequency
+from collections import Counter
+def word_count(fname):
+    with open(fname) as f:
+        return Counter(f.read().split()) 
+
+print('Numbwer of words in the file :', word_count('text.txt')) # the output looks like a dictionary
+
+#---------------- write a list of colour
+colour =['Red', 'Green', 'Black', 'Pink', 'Yellow']
+with open ('abc2.txt' , 'w') as myfile:
+    for c in colour:
+        myfile.write('%s\n' %c)
+               
+content=open('abc2.txt')
+print(content.read())
+
+#---- using the function
+def foo1(fname, lst):
+    with open (fname, 'w') as myfile:
+        for c in lst:
+            myfile.write('%s\n' %c)
+           
+foo1('abc3.txt', colour)
+
+def foo2(fname, lst):
+    with open (fname, 'w') as myfile:
+        for c in lst:
+            myfile.write("%s is %s\n" %(c,c))
+           
+foo1('abc7.txt', colour)
+
+######--------
+f=open('abc.txt')
+x=f.readlines()
