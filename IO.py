@@ -22,6 +22,8 @@ Created on Tue Mar 26 09:38:45 2019
 - with the write we have to be careful because it does overwrite.. we use w mostly if we are creating the file from the beginnig
 - if we already have the file it is better opened with r other wise if we do create it it 
 - if you try to open a non existing file with w+ it will create 
+##### another way of opening and closing the file is using the "WITH"
+###### with open('test.txt' ) as ob1
 '''
 ##########Reading mode######
 import os
@@ -78,6 +80,9 @@ ob3.write('Hello Word\n')
 ob3.write('Hello Word\n') # we have to close it and 
 ob3.close()
 # and if we open it manually we will see 
+
+##### another way of opening and closing the file is using the "WITH"
+###### with open('test.txt' ) as ob1
 
 
 for line in open('text2.py'):
