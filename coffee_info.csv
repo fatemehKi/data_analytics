@@ -1,0 +1,251 @@
+Person_ID,Cups_Per_Week,Age,Gender,Employment,Education,Income,cup_tea,spend_food
+5,1,60,F,fulltime,high school,45000,0,11787
+6,1,40,F,fulltime,high school,46000,6,18674
+9,3,NA,F,fulltime,high school,47000,1,14814
+14,5,20,F,fulltime,gradschool,65000,0,22997
+15,0,50,F,fulltime,high school,46000,5,14606
+18,0,60,F,fulltime,high school,46000,6,14699
+21,0,50,F,fulltime,high school,47000,1,23307
+23,1,40,F,fulltime,high school,46000,1,15928
+26,1,60,F,fulltime,high school,NA,0,7864
+28,3,60,F,fulltime,bachelors,85000,0,29287
+29,1,40,F,fulltime,high school,46000,3,17617
+31,0,20,F,fulltime,bachelors,56000,1,12482
+34,11,NA,F,fulltime,gradschool,98000,4,35044
+36,0,40,F,fulltime,high school,45000,0,10966
+41,7,50,F,fulltime,gradschool,NA,6,9357
+42,2,50,F,fulltime,high school,47000,0,15923
+46,1,40,F,fulltime,high school,45000,0,8195
+47,0,30,F,fulltime,high school,39000,2,3728
+51,0,40,F,fulltime,high school,46000,6,5619
+53,11,50,F,fulltime,bachelors,88000,0,12973
+60,10,50,F,fulltime,gradschool,101000,2,24426
+63,3,60,F,fulltime,bachelors,85000,1,26286
+65,6,40,F,fulltime,bachelors,83000,1,35288
+71,1,60,F,fulltime,high school,45000,0,9242
+73,2,40,F,fulltime,high school,45000,1,10629
+75,0,50,F,fulltime,high school,48000,4,23796
+77,5,50,F,fulltime,gradschool,102000,2,15359
+79,1,60,F,fulltime,high school,45000,2,4301
+80,0,30,F,fulltime,high school,39000,2,5614
+82,2,50,F,fulltime,bachelors,87000,1,21586
+83,1,50,F,fulltime,high school,47000,3,24484
+87,1,30,F,fulltime,high school,40000,1,14026
+90,13,40,F,fulltime,bachelors,84000,5,7962
+91,1,40,F,fulltime,high school,46000,5,4350
+92,0,40,F,fulltime,high school,46000,2,16463
+101,5,30,F,fulltime,bachelors,74000,0,38988
+102,10,50,F,fulltime,gradschool,102000,1,27415
+103,6,40,F,fulltime,bachelors,84000,1,7854
+104,2,50,F,fulltime,high school,48000,2,4476
+105,1,50,F,fulltime,high school,47000,0,7157
+106,3,50,F,fulltime,bachelors,88000,0,8160
+109,1,60,F,fulltime,high school,45000,4,4164
+111,1,50,F,fulltime,high school,47000,0,18631
+113,1,60,F,fulltime,gradschool,97000,5,9109
+114,3,50,F,fulltime,gradschool,101000,5,10118
+120,12,40,F,fulltime,bachelors,84000,1,21917
+122,2,40,F,fulltime,high school,45000,0,5643
+125,4,60,F,fulltime,bachelors,84000,0,22259
+126,4,30,F,fulltime,high school,41000,1,3801
+127,2,40,F,fulltime,high school,46000,1,4436
+129,1,50,F,fulltime,high school,48000,0,19380
+142,2,40,F,fulltime,high school,46000,2,4374
+143,1,20,F,fulltime,high school,31000,1,7842
+150,3,20,F,fulltime,bachelors,57000,0,5366
+154,1,60,F,fulltime,high school,44000,1,4240
+159,10,50,F,fulltime,gradschool,101000,0,40821
+160,1,20,F,fulltime,high school,30000,2,14234
+179,0,40,F,fulltime,bachelors,85000,3,9570
+180,0,60,F,fulltime,high school,46000,1,14004
+182,3,60,F,fulltime,bachelors,85000,0,33971
+190,13,30,F,fulltime,bachelors,74000,1,6914
+191,2,40,F,fulltime,high school,46000,0,4286
+200,2,30,F,fulltime,high school,39000,0,10357
+204,12,30,F,fulltime,gradschool,86000,2,17180
+205,2,40,F,fulltime,high school,45000,5,4741
+207,3,30,F,fulltime,high school,40000,1,3777
+209,3,30,F,fulltime,high school,40000,5,18416
+217,6,30,F,fulltime,bachelors,74000,2,6946
+220,4,20,F,fulltime,bachelors,56000,0,5276
+223,1,60,F,fulltime,high school,45000,0,4475
+224,0,60,F,fulltime,bachelors,84000,0,7905
+228,2,30,F,fulltime,gradschool,86000,2,10985
+234,0,60,F,fulltime,high school,46000,1,18340
+235,2,40,F,fulltime,high school,46000,0,4441
+238,1,60,F,fulltime,high school,45000,0,4295
+240,18,40,F,fulltime,gradschool,97000,2,9048
+241,0,20,F,fulltime,high school,31000,0,12711
+248,5,30,F,fulltime,bachelors,74000,0,26355
+250,3,60,F,fulltime,high school,46000,1,20553
+7,3,50,F,parttime,gradschool,51000,0,19590
+8,0,60,F,parttime,high school,24000,0,7797
+11,0,50,F,parttime,high school,23000,1,2302
+12,1,30,F,parttime,high school,20000,0,3459
+45,1,40,F,parttime,high school,22000,1,11623
+54,2,30,F,parttime,gradschool,42000,5,15905
+59,0,60,F,parttime,high school,22000,1,2183
+70,0,20,F,parttime,high school,14000,3,1411
+78,4,30,F,parttime,gradschool,42000,5,4201
+81,0,50,F,parttime,bachelors,45000,2,11349
+110,0,30,F,parttime,high school,20000,0,2660
+130,1,40,F,parttime,high school,23000,0,2282
+132,1,50,F,parttime,gradschool,50000,2,9902
+134,1,40,F,parttime,high school,23000,0,2250
+155,0,40,F,parttime,high school,23000,0,6217
+163,4,30,F,parttime,bachelors,37000,0,5260
+164,0,60,F,parttime,high school,24000,2,4502
+167,1,30,F,parttime,bachelors,36000,1,3426
+175,0,40,F,parttime,high school,22000,0,3601
+186,0,50,F,parttime,high school,23000,0,2247
+188,1,60,F,parttime,high school,22000,1,10630
+189,3,40,F,parttime,bachelors,42000,3,14478
+196,0,60,F,parttime,high school,22000,4,10624
+198,1,30,F,parttime,high school,20000,4,4747
+199,1,40,F,parttime,bachelors,42000,0,3935
+203,0,NA,F,parttime,high school,20000,0,4392
+227,1,60,F,parttime,bachelors,NA,1,4066
+230,1,20,F,parttime,high school,15000,0,2892
+244,1,50,F,parttime,gradschool,51000,3,4882
+19,0,30,F,student,high school,3000,1,309
+33,0,20,F,student,high school,3000,2,532
+39,0,NA,F,student,high school,3000,1,1094
+86,1,20,F,student,gradschool,6000,3,752
+96,0,30,F,student,high school,4000,1,518
+117,0,20,F,student,bachelors,6000,2,2377
+158,0,20,F,student,high school,3000,1,622
+165,0,20,F,student,high school,2000,4,902
+172,0,30,F,student,high school,4000,2,416
+185,0,20,F,student,gradschool,6000,3,1347
+187,0,20,F,student,gradschool,6000,0,1980
+197,0,30,F,student,high school,5000,0,1681
+218,0,30,F,student,high school,NA,3,2527
+246,0,20,F,student,bachelors,6000,2,2573
+3,1,30,F,unempl,bachelors,14000,0,6960
+4,0,20,F,unempl,high school,6000,4,1173
+16,0,50,F,unempl,high school,10000,1,959
+22,0,50,F,unempl,gradschool,20000,1,4925
+44,0,20,F,unempl,high school,6000,1,2009
+64,0,40,F,unempl,bachelors,16000,2,6023
+66,2,60,F,unempl,gradschool,40000,1,9832
+72,0,20,F,unempl,high school,6000,0,1226
+89,0,30,F,unempl,high school,8000,2,849
+98,0,20,F,unempl,high school,6000,1,2714
+107,0,40,F,unempl,high school,9000,2,2099
+119,0,50,F,unempl,high school,10000,0,1200
+124,2,40,F,unempl,gradschool,19000,0,1780
+133,1,20,F,unempl,bachelors,11000,2,1166
+137,0,50,F,unempl,bachelors,18000,2,2900
+153,0,30,F,unempl,high school,8000,0,3591
+168,0,40,F,unempl,gradschool,20000,2,9303
+169,1,50,F,unempl,bachelors,18000,0,1811
+177,0,60,F,unempl,high school,28000,2,2737
+208,0,30,F,unempl,bachelors,15000,0,7006
+210,1,40,F,unempl,bachelors,17000,2,1763
+236,1,60,F,unempl,high school,30000,0,9050
+237,0,60,F,unempl,gradschool,40000,0,9099
+243,0,20,F,unempl,bachelors,11000,2,1948
+1,11,50,M,fulltime,bachelors,107000,1,9986
+2,1,60,M,fulltime,bachelors,NA,2,9590
+10,6,40,M,fulltime,high school,55000,1,13115
+13,1,30,M,fulltime,high school,48000,3,7466
+17,2,40,M,fulltime,high school,56000,0,10495
+20,2,40,M,fulltime,bachelors,102000,0,10603
+24,0,40,M,fulltime,bachelors,103000,0,9686
+25,3,50,M,fulltime,bachelors,107000,0,10011
+32,0,40,M,fulltime,gradschool,118000,0,11051
+35,0,60,M,fulltime,bachelors,103000,0,32290
+38,11,30,M,fulltime,gradschool,NA,2,35981
+43,4,60,M,fulltime,bachelors,103000,1,23870
+49,1,60,M,fulltime,high school,55000,2,15961
+50,9,NA,M,fulltime,bachelors,107000,5,31889
+52,4,50,M,fulltime,bachelors,107000,0,29177
+55,1,40,M,fulltime,high school,56000,5,5195
+58,1,30,M,fulltime,high school,49000,1,21032
+61,0,20,M,fulltime,bachelors,69000,2,13564
+62,2,40,M,fulltime,high school,55000,3,15513
+67,4,40,M,fulltime,high school,56000,1,13770
+74,1,30,M,fulltime,high school,48000,0,7779
+76,1,50,M,fulltime,high school,58000,3,5564
+88,2,50,M,fulltime,high school,58000,0,16631
+94,3,30,M,fulltime,high school,49000,3,18645
+99,5,40,M,fulltime,high school,55000,0,10979
+100,2,20,M,fulltime,high school,36000,0,10753
+108,0,50,M,fulltime,high school,58000,0,18961
+112,0,40,M,fulltime,high school,56000,2,13335
+115,3,50,M,fulltime,bachelors,108000,5,11892
+116,10,50,M,fulltime,bachelors,107000,0,10088
+131,0,60,M,fulltime,high school,55000,0,12692
+136,7,40,M,fulltime,high school,55000,0,23233
+141,4,60,M,fulltime,bachelors,103000,2,17628
+144,5,40,M,fulltime,high school,55000,1,27684
+146,3,40,M,fulltime,high school,55000,1,6728
+148,12,40,M,fulltime,bachelors,104000,0,10832
+151,0,30,M,fulltime,high school,49000,0,28604
+152,1,60,M,fulltime,high school,56000,0,32928
+156,1,50,M,fulltime,high school,58000,1,22300
+161,19,40,M,fulltime,bachelors,102000,2,39129
+184,2,20,M,fulltime,high school,37000,1,4717
+192,2,60,M,fulltime,high school,55000,1,13933
+194,5,30,M,fulltime,high school,50000,4,17705
+195,3,30,M,fulltime,high school,48000,2,8525
+211,0,20,M,fulltime,high school,37000,1,9580
+212,2,30,M,fulltime,high school,49000,2,6573
+214,33,30,M,fulltime,gradschool,103000,0,45120
+216,0,30,M,fulltime,high school,49000,1,6677
+219,6,40,M,fulltime,high school,56000,2,9299
+221,0,60,M,fulltime,bachelors,103000,1,28015
+229,5,40,M,fulltime,high school,56000,4,5866
+232,0,60,M,fulltime,high school,55000,0,12473
+233,2,60,M,fulltime,high school,56000,1,21149
+245,5,50,M,fulltime,high school,57000,6,6193
+247,2,60,M,fulltime,high school,55000,1,21040
+249,29,40,M,fulltime,bachelors,103000,3,9712
+30,3,30,M,parttime,bachelors,45000,0,4273
+37,1,60,M,parttime,high school,28000,0,2765
+40,1,20,M,parttime,high school,18000,5,1681
+57,2,40,M,parttime,bachelors,52000,0,12116
+69,4,50,M,parttime,gradschool,61000,6,5753
+84,1,30,M,parttime,high school,24000,0,7634
+93,0,40,M,parttime,gradschool,59000,0,9521
+123,3,40,M,parttime,bachelors,52000,1,21202
+128,9,40,M,parttime,bachelors,52000,2,17123
+135,0,60,M,parttime,high school,27000,2,2671
+138,2,60,M,parttime,bachelors,51000,0,4783
+140,0,60,M,parttime,high school,28000,3,11384
+147,1,30,M,parttime,high school,25000,2,4503
+162,0,20,M,parttime,high school,17000,1,6317
+166,0,60,M,parttime,high school,28000,0,2757
+176,0,60,M,parttime,high school,28000,2,4696
+178,0,30,M,parttime,high school,24000,6,2598
+201,0,50,M,parttime,high school,28000,0,8759
+202,6,50,M,parttime,bachelors,54000,2,9133
+206,8,40,M,parttime,bachelors,52000,6,10827
+213,0,30,M,parttime,gradschool,52000,0,7918
+215,4,60,M,parttime,gradschool,59000,0,14785
+222,2,50,M,parttime,high school,29000,2,6896
+225,0,20,M,parttime,high school,18000,0,1685
+48,0,20,M,student,high school,4000,2,384
+68,0,20,M,student,high school,4000,2,1687
+118,0,30,M,student,high school,5000,1,1019
+149,0,20,M,student,high school,3000,0,358
+239,1,20,M,student,gradschool,8000,1,3158
+27,0,40,M,unempl,high school,12000,5,2457
+56,0,30,M,unempl,high school,10000,2,1111
+85,1,20,M,unempl,bachelors,15000,1,3471
+95,0,20,M,unempl,high school,7000,2,649
+97,1,50,M,unempl,bachelors,21000,0,2014
+121,1,60,M,unempl,gradschool,44000,0,4092
+139,1,50,M,unempl,bachelors,21000,1,2862
+145,0,50,M,unempl,high school,11000,2,2727
+157,1,60,M,unempl,high school,31000,2,6226
+170,0,20,M,unempl,bachelors,14000,0,4117
+171,0,50,M,unempl,high school,12000,3,1236
+173,0,50,M,unempl,bachelors,21000,1,6153
+174,1,20,M,unempl,bachelors,13000,3,1313
+181,0,20,M,unempl,high school,8000,0,1669
+183,1,40,M,unempl,high school,11000,0,2246
+193,0,30,M,unempl,high school,9000,3,4595
+226,0,40,M,unempl,high school,11000,1,2102
+231,0,30,M,unempl,gradschool,21000,1,8708
+242,0,20,M,unempl,high school,7000,1,2857
