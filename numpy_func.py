@@ -40,6 +40,11 @@ coming in the above method of array creation) moreover asarray gives the nested 
 - list vs  arary is ',' in the list not in array
 - x=np.append(x, list)
 - split an array in specific location
+- np.count_nonzero(x) will give the numher if non zeto elements in x
+- x.flag.writeable = False set the x array to be immutable; however it is mutable 
+- list comprehensive is a condition inside in the [] rather than the index 
+- in1d(a1, a2) checks one by one in the a1 and a2 and the size is a1 and the result us boolean list; 
+howeverm intersect and union also can be done
 '''
 import numpy as np
 myarray=np.array([1,2,3]) #if we add the [] inside the () it will change to 
@@ -316,3 +321,55 @@ type(y) # it is a list of array
 z=y[0]
 z[0]
 c=y[0][1]
+
+######---------------- Monday
+x=np.array([[0, 10,20],[20,30,40]])
+print('Original array:')
+print(x)
+print('Number of non zero elements: ' )
+print(np.count_nonzero(x))
+
+#---- change the behaivier of the arrays in the -- all can be immurable ot nothing meaning we can not do just some elements
+x=np.zeros(10)
+x.flags.writeable = False
+print('test to change' )
+x[0]=1 #error
+
+#---- sum of all the mutiples of 3 or 5 below 100.. we can have the condition in 
+x=np.arange(1,100)
+#find multiple of 3 or 5
+n=x[(x%3==0) | (x%5==0)] # list comprehensive
+print(n)
+print(n.sum())
+
+# multiple iterator--- combine two dimensional array
+x=np.arange(4)
+print('one dimensional array:')
+print(x)
+y= np.arange(8).reshape(2,4)
+print('two dimensional array:')
+print(y)
+for a, b in np.nditer([x,y]):  #####################brcarful that it takes repeated for a if the size is in smaller than size b
+    print('%d:%d' %(a,b))
+
+
+###### union , intersect, setxor1d
+ar1=np.array([0, 10, 20, 40, 60])
+ar2=[0,40]
+
+print(np.in1d(ar1, ar2)) #not necessary to be np array, list is ok but set may not be ok
+print(np.union1d(ar1, ar2))  #not necessary to be np array, list is ok but set may not be ok
+print(np.intersect1d(ar1, ar2))  #not necessary to be np array; list is ok but set may not be ok
+
+array1=np.array([0,10,20,40,60,80])
+array2=[10,30,40,50,70]
+print(np.setxor1d(array1,array2)) #not necessary to be np array; list is ok but set may not be ok
+
+#####to get the unique alements of an array; it may cause cahnging structure
+x=np.array([10, 10, 20, 20, 30, 30])
+print(np.unique(x))
+x=np.array([[1,1],[2,3]])
+np.unique(x) #the dimension changes
+
+###repeating a 
+
