@@ -369,7 +369,17 @@ print(np.setxor1d(array1,array2)) #not necessary to be np array; list is ok but 
 x=np.array([10, 10, 20, 20, 30, 30])
 print(np.unique(x))
 x=np.array([[1,1],[2,3]])
-np.unique(x) #the dimension changes
+np.unique(x) #the dimension changes and the default output is one dimension; therefore it will return a one dimension array
 
-###repeating a 
+# a Python program to construct an array by repeating.
+a = [1, 2, 3, 4]
+print("Original array")
+print(a)
+print("Repeating 2 times")
+x = np.tile(a, 2)
+print(x)
+print("Repeating 3 times")
+x = np.tile(a, 3)
+print(x)
 
+z=np.array([[1,2], [3,4]])
