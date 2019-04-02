@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+
 """
 Created on Mon Apr  1 10:30:24 2019
 
@@ -171,23 +171,25 @@ np.random.seed(123456)
 np.random.seed(10)
 np.random.rand(10)##########
 
-             #mer
+#mer
 a = np.array([1, 2, 3])
-b = np.array([2, 3, 4])
+b = np.array([4, 5, 6])
 np.vstack((a,b))# #2D because we have two []
 np.hstack((a,b)) #1D because we have two []
 np.concatenate((a,b),axis=0)#axis=1??
 np.concatenate((a,b),axis=1) # error because we don't have second axis, a,b shoulb 2D then we have acess
 
 a = np.array([[1, 2, 3]]) #2D
-b = np.array([[2, 3, 4]]) #2D
+b = np.array([[4, 5, 6]]) #2D
 np.concatenate((a,b),axis=0)#axis=1
 np.concatenate((a,b),axis=1)
 
-np.column_stack((a,b))
-np.row_stack((a,b))
+np.column_stack((a,b)) #the column stack is different in 1D in 2D when we apply clumn stack or row stack
+#because we don't have the second D (column) in the 1D
+np.row_stack((a,b)) # similar to the 1D, 2D has two dimension
 
-a.itemset(2,100)
+a.itemset(2,100) #in place change.. meaning it changes an existing location
+b.itemset(2,100)
 
 
 
