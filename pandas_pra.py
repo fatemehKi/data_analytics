@@ -26,6 +26,7 @@ type all comes in the output one data type (object)
 - series a one dimension array but dataframe is combination of seeries [c1] gives us just series; however,[[c1]] keeps the data frame and gives us only a column of this
 - the default nimeric values are float type
 - lov vs iloc we get the index in the loc not in iloc
+- therefore, the horizantal ranking only works for the heteregenous data frame
 '''
 
 import numpy as np
@@ -266,10 +267,307 @@ gapminder = pd.read_csv(data_url)
 # print the first three rows
 gapminder.head(n=5)
 
-sort_by_life = gapminder.sort_values('lifeExp',ascending=False)
+sort_by_life = gapminder.sort_values('lifeExp',ascending=False) #we are sorting based in the lifeExp column and in descending 
 sort_by_life.head(n=5)
 
 
-sort_by_life_gdp = gapminder.sort_values(['continent','lifeExp'])
-sort_by_life_gdp.head(n=5)
+sort_by_life_continent = gapminder.sort_values(['continent','lifeExp']) #sorting based on two columns in asccending, first continent and then the lifeExp.. if we have three column , the first two needed to be the same
+sort_by_life_continent.head(n=5)
 #-----------------------------
+pd=pd.DataFrame([[0, 2, 3], [0, 4, 1], [10, 20, 30]], columns=['A', 'B', 'C'])
+#df
+#df.iat[1,2]
+
+#ranking vs sorting is important in slide 24.. it is only works for numeric and the output is float
+A=pd.Series([7,4,9, 6, 1, 6,0])
+B=pd.Series([10, 72, 19, 160, 72, 8, 1])
+C=pd.Series([0, 1, 0, 2, 0, 3, 5])
+D=pd.DataFrame({'col1':A, 'col2':B, 'col3':C})
+D.rank() # the 'ties' are assignede method='average' default rank
+D.rank(axis=1)
+D.rank(ascending=False, method='first') 
+D.rank(pct=True) #calculates the percentagerank, i.e. pct rank=rank/maximum_value of the rank
+
+     
+#---------------------------
+df = pd.DataFrame([[0, 2, 3], [0, 4, 1], [10, 20, 30]],columns=['A', 'B', 'C'])
+df
+df.iat[1, 2]
+df.iat[1, 2] = 10
+df
+df.loc[0].iat[1]
+
+df.at[2, "A"]
+#----------------------------
+#Ranking
+
+d = {
+'Name':['Alisa','Bobby','Cathrine','Alisa','Bobby','Cathrine',
+'Alisa','Bobby','Cathrine','Alisa','Bobby','Cathrine'],
+'Subject':['Mathematics','Mathematics','Mathematics','Science','Science','Science',
+'History','History','History','Economics','Economics','Economics'],
+'Score':[62,47,55,74,31,77,85,63,42,62,89,85]}
+ 
+df = pd.DataFrame(d,columns=['Name','Subject','Score'])
+df
+
+df.info()
+
+df.rank()#Average(default)
+df.rank(pct=True)#percentage rank
+df
+df.rank(axis=1) # ignored the string and just rank the last column with itself then the result is the just one
+
+xx=df.rank(pct=True)#percentage rank
+xx.rank(axis=1)#column wise
+
+d = {
+'Name':['Alisa','Bobby','Cathrine','Alisa','Bobby','Cathrine',
+'Alisa','Bobby','Cathrine','Alisa','Bobby','Cathrine'],
+'Subject':['Mathematics','Mathematics','Mathematics','Science','Science','Science',
+'History','History','History','Economics','Economics','Economics']}
+
+ 
+yy = pd.DataFrame(d,columns=['Name','Subject'])
+yy
+yy.rank(axis=1)  # if all dataframe is string then the axis=1 has meaning.. therefore, the horizantal ranking only works for the heteregenous data frame
+
+
+df['score_ranked']=df['Score'].rank(ascending=1)#average-asc# new column is created and we are ranking the single column
+df['score_ranked']=df['Score'].rank(ascending=0)#average-descending order
+df['score_ranked']=df['Score'].rank(ascending=0, method='min')#minimum---using the minimum ranking for the two similar value and we leave one ranking numbers in between
+df['score_ranked']=df['Score'].rank(ascending=0, method='max')#maximum-- using the maximum ranking for the two similar value and we leave one ranking numbers before 
+df['score_ranked']=df['Score'].rank(ascending=0, method='dense')#dense-- using the mimimun ranking for the two similar value and but we don't skip-leave the empty any ranking
+df['score_ranked']=df['Score'].rank(ascending=0, method='first')#first--  assign the first ranking to the first appearence in the similarities
+df
+#----------------------
+#Ranking by group-- we do ranking inside the subject
+
+df["group_rank"] = df.groupby("Subject")["Score"].rank(ascending=1,method='dense')
+df
+df['Subject'].unique()
+#----------------------
+#similar to the list comprehension , applying a acondition to a column
+a=(df.Score>79) #a is one column=> it is a series
+a
+a=(df.Score>40) & (df.Name>'B') #meaning that anything after B like Bob is ok
+df.Score[a==True] # we are comparing the boolean value of the same location; however, it is not in the data farme parts
+
+df.Score[df['Score']>79] #slicing 
+#----------------------
+
+#Merge
+
+# data frame 1
+d1 = {'Customer_id':pd.Series([1,2,3,4,5,6]),
+  'Product':pd.Series(['Oven','Oven','Oven','Television','Television','Television'])}
+df1 = pd.DataFrame(d1)
+ 
+ 
+# data frame 2
+d2 = {'Customer_id':pd.Series([2,4,6]),
+    'State':pd.Series(['California','California','Texas'])}
+df2 = pd.DataFrame(d2)
+df1
+df2
+
+#inner join in python pandas
+pd.merge(df1, df2, on='Customer_id', how='inner')
+
+pd.merge(df1, df2, how='inner') # because they do have the same name for customer_ID; it will take it for the join
+
+        
+# data frame 3
+d3 = {'Customer_id3':pd.Series([2,4,6]),
+    'State':pd.Series(['California','California','Texas'])}
+df3 = pd.DataFrame(d3)       
+        
+pd.merge(df1, df3, how='inner')# because they do not have the same name this will not work
+        
+# outer join in python pandas
+pd.merge(df1, df2, on='Customer_id', how='outer') # it is used to find out the problema and missing values
+
+# left join in python
+pd.merge(df1, df2, on='Customer_id', how='left') #give me everything from the left(df1) and the commons from the right (df2)
+pd.merge(df2, df1, on='Customer_id', how='left') #give me everything from the left(df2) and the commons from the right (df1)
+
+
+# right join in python pandas
+pd.merge(df1, df2, on='Customer_id', how='right')
+pd.merge(df2, df1, on='Customer_id', how='right')
+#------------------------
+#Pivot: Reshape long to wide
+d = {
+    'countries':['A','B','C','A','B','C'],
+    'metrics':['population_in_million','population_in_million','population_in_million',
+                             'gdp_percapita','gdp_percapita','gdp_percapita'],
+    'values':[100,200,120,2000,7000,15000]
+    }
+
+df = pd.DataFrame(d,columns=['countries','metrics','values'])
+df
+
+# reshape from long to wide in pandas python #use the unique value of the countries as the new index and 
+df2=df.pivot(index='countries', columns='metrics', values='values')
+df2
+type(df2)
+df2.to_csv('new.csv')
+
+#------------------------
+#reshape using stack and unstack/Multilevel indexes
+
+header = pd.MultiIndex.from_product([['Semester1','Semester2'],['Maths','Science']])
+d=([[12,45,67,56],[78,89,45,67],[45,67,89,90],[67,44,56,55]])
+ 
+ 
+df = pd.DataFrame(d,
+                  index=['Alisa','Bobby','Cathrine','Jack'],
+                  columns=header) # the header is multi levels and the second level repeated for all level1
+df
+
+
+#Stack() Function in dataframe stacks the column to rows at level 1 (starting from 0)(default).
+
+stacked_df=df.stack() #reducing the level -- m
+stacked_df
+
+#unstack() Function in dataframe unstacks the row to columns . Basically it’s a reverse of stacking
+
+unstacked_df = stacked_df.unstack()
+unstacked_df
+
+#Stack the dataframe at level 0
+
+stacked_df_lvl=df.stack(level=0)
+stacked_df_lvl
+#-------------------------
+
+#Re-indexing: change order of row and column in pandas-- smart way of handling missing
+
+d = {'Name':['Alisa','Bobby','Cathrine','Madonna','Rocky','Sebastian','Jaqluine','Rahul','David','Andrew','Ajay','Teresa'], 
+'Score1':[62,47,55,74,31,77,85,63,42,32,71,57],'Score2':[89,87,67,55,47,72,76,79,44,92,99,69], 
+'Score3':[56,86,77,45,73,62,74,89,71,67,97,68]}
+ 
+df = pd.DataFrame(d)
+df
+
+#reindex or change the order of rows
+df.reindex([8,11,9,2, 1, 0,7,5,6,4,10,3]) # we simply can remove a row by removing its index without error
+
+df.reindex([8,11,9,2, 1, 0,7,5,6,4,10])
+
+# reindex or change the order of columns
+columnsTitles = ['Score2', 'Score1', 'Score3']
+df.reindex(columns=columnsTitles) # we get the new order of the columns 
+
+df.reindex([8,11,9,2, 1, 0,7,5,6,4,10], columns=columnsTitles)# new order for the indexes
+
+#--------------------------------
+
+#missing values
+df = pd.DataFrame(np.random.randn(5, 3), index=['a', 'c', 'e', 'f', 'h'], #five rows and five index
+columns=['one', 'two', 'three']) # three columns with three names
+df
+df['four'] = 'bar'
+df['five'] = df['one'] > 0 # we adding a boolean column
+df
+#df[df['one']<0]
+
+# inserting the missing value for the columns
+df2 = df.reindex(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']) #passing the indexes that are not available in the df
+df2
+pd.isnull(df2['one']) # the single column as the boolean series
+df2['four'].notnull() # a series that opposite of isnull
+df2.isnull() #data frame of the boolean value
+
+df2.count() # the number ofo non missing values
+
+df2[df2['five'].notnull()] # in the data frame missing rowsin the 'five' is removed
+df2['five'].notnull() # is a series
+df2
+
+
+#--------------------------------
+#Drop the duplicate rows: based on the primary key
+
+d = {
+'Name':['Alisa','Bobby','jodha','jack','raghu','Cathrine','Alisa','Bobby','kumar','Alisa','Alex','Cathrine'],
+    'Age':[26,24,23,22,23,24,26,24,22,23,24,24],
+    'Score':[85,63,55,74,31,77,85,63,42,62,89,77]}
+ 
+df = pd.DataFrame(d,columns=['Name','Age','Score'])
+df
+
+# drop duplicate rows--- we will be removing the duplication rows (remove the duplication in the whole row)
+df.drop_duplicates()
+df.drop_duplicates(keep='last')# remove the duplication but keep the last one
+
+# drop duplicate by a column name
+df.drop_duplicates(['Name'], keep='last')#removing duplication just in one column.. be careful that the column required to be a primary key
+# we always remove the whole row
+
+df["is_duplicate"]= df.duplicated() # it a boolean function and check if it is repeated or no
+df
+
+# Drop an observation or row
+df.drop([1,2]) #row index 1 and 2 is dropped.. the default axis for the column is 0 meaning it removes rows
+df.drop((3:8)) #error -- range does not work
+df.drop([3:8]) #error -- range does not work
+df.drop(df.index[3:5])
+
+# Drop a row by condition-- list comprehension
+df[(df.Name != 'Alisa') & (df.Age <23)]
+df2=df[(df.Name != 'Alisa') & (df.Age <23)]
+df2
+#if we want to change the index and make it in order
+df2.index=[0,1]
+df2
+
+# Drop bottom 3 rows #3rd method and without using function or condition
+df[:-3]
+
+# drop a column based on name
+df.drop('Age',axis=1) # if we want to remove the column we need to have axis=1
+df
+# drop a column based on column index # if we don't remember the column name
+df.drop(df.columns[2],axis=1)
+
+del df['Age']#!!!  The output is permanently deleting
+df
+
+#---------------------------------
+#drop na in specific location 
+df = pd.DataFrame([[np.nan, 2, np.nan, 0], [3, 4, np.nan, 1],
+         [np.nan, np.nan, np.nan, 5]],
+  columns=list('ABCD'))
+df
+
+
+df.dropna(axis=1, how='all') #we are moving columns.. if all values in the column is na drop that column
+    
+df.dropna(axis=1, how='any') #any column yjat have at least one missing value dropped
+    
+df.dropna(axis=0, how='all') #move horizantaly.. we delete when whole row is nan
+df.dropna(axis=0, how='any') #move horizantaly.. we delete when whole row is nan.. all rows have at least one nan
+
+df.dropna(thresh=2) # the value is showing the number of non-missing value you should have in record to keep the record
+df.dropna(thresh=3) 
+
+df.dropna(thresh=3, axis=1) 
+
+#--------------------------------
+ 
+#Create a Dictionary of series
+d = {'Score_Math':pd.Series([66,57,75,44,31,67,85,33,42,62,51,47]),
+      'Score_Science':pd.Series([89,87,67,55,47,72,76,79,44,92,93,69])}
+ 
+df = pd.DataFrame(d)
+df
+
+#row wise mean
+ 
+df.apply(np.mean,axis=1)       
+
+#column wise meanprint 
+ 
+df.apply(np.mean,axis=0)
