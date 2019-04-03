@@ -311,6 +311,9 @@ d = {
 df = pd.DataFrame(d,columns=['Name','Subject','Score'])
 df
 
+# to get the correlation of two columns
+pd.crosstab(df.Name, df.Subject)
+
 df.info()
 
 df.rank()#Average(default)
@@ -564,10 +567,11 @@ d = {'Score_Math':pd.Series([66,57,75,44,31,67,85,33,42,62,51,47]),
 df = pd.DataFrame(d)
 df
 
-#row wise mean
- 
+#row wise mean-- we can apply the aggregate functions-- any aggregate function
 df.apply(np.mean,axis=1)       
 
-#column wise meanprint 
- 
+#column wise meanprint  
 df.apply(np.mean,axis=0)
+
+
+df.apply(np.max,axis=1)       
