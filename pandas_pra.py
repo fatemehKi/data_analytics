@@ -568,8 +568,10 @@ df = pd.DataFrame(d)
 df
 
 #row wise mean-- we can apply the aggregate functions-- any aggregate function
-df.apply(np.mean,axis=1)       
-
+df.apply(np.mean,axis=1)    
+   
+np.mean(df.Score_Math)
+np.mean(df['Score_Math'])
 #column wise meanprint  
 df.apply(np.mean,axis=0)
 
