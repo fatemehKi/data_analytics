@@ -13,7 +13,7 @@ list(t) the result is ['Othello', 'Iago'].. we either have a scalar or we have t
 - generators are a simple and powerful tool for creating iterator.., generator is the way of using iterators
 - to call the generator we either use the loop or we use the next()
 - with is a secure way of reading and opening and closing at the end
-- readline() return a list and each line is one element
+- readlines() return a list and each line is one element
 - enumerate on the file will iterate among lines
 '''
 
