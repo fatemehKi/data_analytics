@@ -287,7 +287,7 @@ for  index, row in s_df.iterrows():
     if (sum_comp< threshold):
         li.append(row['Total Compensation'])
     
-len(li)  #shows the number of job codes that will coce
+len(li) 
 
 #### Q6: Specify the percentage of health and dental over the total benefit
 n=df_cleaned['Health and Dental'].mean()
