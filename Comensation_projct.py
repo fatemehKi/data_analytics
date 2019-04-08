@@ -6,7 +6,7 @@
  * @Contact: f.kiaie@gmail.com
  ***********************************************************************/
 """
-""""
+"""
 Questions to respond:
     Q1. 
     - (a) Specifying Number of groups in different classification criteria for
@@ -37,7 +37,7 @@ Questions to respond:
    Q7.
    Specify the percentage of the jobs that have the retirment plan
    
-""""
+"""
 
 #######----------------------------Inclusing packages---------------------#######
 import os
