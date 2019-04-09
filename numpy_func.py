@@ -140,6 +140,8 @@ np.full((3,4), 5)
 
 np.random.random([2,3])
 
+np.random.random((2,3))
+
 a=np.arange(100)
 a
 a.shape
@@ -224,6 +226,7 @@ print(np.asarray(my_list))
 my_tuple=([8,4,6], [1,2,3])
 
 my_tuple2=([80,4,6], [1,2])
+my_tuple2=([[80,4,6], [1,2]])
 print("Tuple to array: ")
 x=np.asarray(my_tuple2)
 x.ndim
@@ -267,6 +270,7 @@ x.ndim
 
 x=np.append(x,[[40,50,60], [70,80,90]], axis=1)#added column wise meaning we add those column to the previous columns
 print(x)
+
 
 #########
 fvalues=[0,12, 45.21, 34, 99.91]
@@ -320,6 +324,7 @@ print(y)
 type(y) # it is a list of array
 z=y[0]
 z[0]
+y[0][0]
 c=y[0][1]
 
 ######---------------- Monday
@@ -350,14 +355,14 @@ y= np.arange(8).reshape(2,4)
 print('two dimensional array:')
 print(y)
 for a, b in np.nditer([x,y]):  #####################brcarful that it takes repeated for a if the size is in smaller than size b
-    print('%d:%d' %(a,b))
+    print('%d:%d' %(a,b)) #nditer: multi-dimensional iterator object to iterate over arrays
 
 
 ###### union , intersect, setxor1d
 ar1=np.array([0, 10, 20, 40, 60])
 ar2=[0,40]
 
-print(np.in1d(ar1, ar2)) #not necessary to be np array, list is ok but set may not be ok
+print(np.in1d(ar2, ar1)) #not necessary to be np array, list is ok but set may not be ok
 print(np.union1d(ar1, ar2))  #not necessary to be np array, list is ok but set may not be ok
 print(np.intersect1d(ar1, ar2))  #not necessary to be np array; list is ok but set may not be ok
 
@@ -381,6 +386,15 @@ print(x)
 print("Repeating 3 times")
 x = np.tile(a, 3)
 print(x)
+a*3
 
-z=np.array([[1,2], [3,4]])
+x = np.array([1, 2, 3, 4, 5, 6])
+print("Original array: ",x)
+print("Maximum Values: ",np.argmax(x))#index
+print("Minimum Values: ",np.argmin(x))#index
+
+x[np.argmax(x)]
+x.max()
+
+x.argmax()
 
