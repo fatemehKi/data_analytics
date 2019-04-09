@@ -62,7 +62,7 @@ pd.read_excel('tmp2.xlsx', comment='#') #everything after hash key in one row is
 #and pylab is a module that gets installed alongside matplotlib.
 
 
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt 
 
 plt.interactive(False)#interactive mode is off, you have to call plt.show() explicitly to pop up figure window.
 
