@@ -39,6 +39,7 @@ p1.ndim
 p1.shape
 p1.size
 
+
 x=p1[[0,1]]
 x
 type(x)
